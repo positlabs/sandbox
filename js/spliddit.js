@@ -1,3 +1,5 @@
+(function(){
+
 var HIGH_SURROGATE_START = 0xD800
 var HIGH_SURROGATE_END = 0xDBFF
 
@@ -127,6 +129,12 @@ function between_inclusive (value, lower_bound, upper_bound) {
   return value >= lower_bound && value <= upper_bound
 }
 
-module.exports = spliddit
-module.exports.isFirstOfPair = is_first_of_surrogate_pair
-module.exports.hasPair = has_pair
+spliddit.isFirstOfPair = is_first_of_surrogate_pair;
+spliddit.hasPair = has_pair;
+
+window.spliddit = spliddit;
+})();
+
+// module.exports = spliddit
+// module.exports.isFirstOfPair = is_first_of_surrogate_pair
+// module.exports.hasPair = has_pair
